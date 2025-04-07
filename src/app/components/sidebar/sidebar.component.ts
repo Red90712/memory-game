@@ -8,4 +8,7 @@ import { Component, Input } from '@angular/core';
 export class SidebarComponent {
   @Input() redPlayerName: string = '';
   @Input() bluePlayerName: string = '';
+  @Input() scores: { red: number; blue: number } = { red: 0, blue: 0 };
+
+  
 }

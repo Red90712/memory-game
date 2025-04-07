@@ -1,23 +1,19 @@
-<app-header></app-header>
-
-<ng-container *ngIf="!playerNames">
-  <app-player-setup (playersSet)="onPlayersSet($event)"></app-player-setup>
-</ng-container>
+<app-player-setup
+  *ngIf="!playerNames"
+  (playersSet)="onPlayersSet($event)">
+</app-player-setup>
 
 <ng-container *ngIf="playerNames">
-  <div class="main" [ngClass]="currentPlayer">
+  <app-sidebar
+    [redPlayerName]="playerNames.red"
+    [bluePlayerName]="playerNames.blue"
+    [scores]="scores"
+  ></app-sidebar>
 
-    <app-sidebar 
-    [redPlayerName]="playerNames.red || 'Equipo Rojo'" 
-    [bluePlayerName]="playerNames.blue || 'Equipo Azul'">
-  </app-sidebar>
-  
-    <p class="turn-indicator">
-      Turno de: <span [ngClass]="currentPlayer">{{ playerNames?.[currentPlayer] || currentPlayer }}</span>
-    </p>
-    
-  </div>
+  <app-game-board
+    (playerChange)="onPlayerChange($event)"
+    (scoreChange)="onScoreChange($event)"
+    [redPlayerName]="playerNames.red"
+    [bluePlayerName]="playerNames.blue"
+  ></app-game-board>
 </ng-container>
-
-
-<router-outlet />
