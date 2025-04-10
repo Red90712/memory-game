@@ -1,0 +1,6 @@
+<div class="feet" [ngClass]="currentPlayer">
+    Turno de: 
+    <span>{{ currentPlayer === 'red' ? redPlayerName : bluePlayerName }}</span>
+    <span class="dot" [ngStyle]="{ backgroundColor: currentPlayer === 'red' ? '#ff4040' : '#4080ff' }"></span>
+  </div>
+  
