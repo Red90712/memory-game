@@ -1,0 +1,14 @@
+<div class="board">
+  <div
+    class="card"
+    *ngFor="let card of cards; let i = index"
+    (click)="flipCard(i)"
+  >
+    <div class="card-inner" [class.flipped]="isFlipped(i)">
+      <div class="card-front"></div>
+      <div class="card-back">
+        <img [src]="card" alt="hamster" />
+      </div>
+    </div>
+  </div>
+</div>

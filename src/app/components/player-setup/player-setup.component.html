@@ -1,0 +1,46 @@
+<div class="setup-container">
+  <h2>Seleccione los jugadores para cada equipo</h2>
+
+  <form (ngSubmit)="startGame()" #playerForm="ngForm">
+
+    <label for="redPlayer">Equipo Rojo</label>
+    <select
+      id="redPlayer"
+      [(ngModel)]="redName"
+      name="red"
+      required
+      #redSelect="ngModel"
+    >
+      <option [ngValue]="null">-- Seleccione un jugador --</option>
+      <option
+        *ngFor="let user of mostrarUsuario"
+        [value]="user.name"
+        [disabled]="user.name === blueName"
+      >
+        {{ user.name }}
+      </option>
+    </select>
+
+    <label for="bluePlayer">Equipo Azul</label>
+    <select
+      id="bluePlayer"
+      [(ngModel)]="blueName"
+      name="blue"
+      required
+      #blueSelect="ngModel"
+    >
+      <option [ngValue]="null">-- Seleccione un jugador --</option>
+      <option
+        *ngFor="let user of mostrarUsuario"
+        [value]="user.name"
+        [disabled]="user.name === redName"
+      >
+        {{ user.name }}
+      </option>
+    </select>
+
+    <button type="submit" [disabled]="playerForm.invalid">Comenzar</button>
+    <button mat-flat-button color="warn" (click)="volver()" style="margin-left:8px">Volver</button>
+
+  </form>
+</div>

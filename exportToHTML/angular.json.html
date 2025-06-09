@@ -1,0 +1,133 @@
+<html>
+<head>
+<title>angular.json</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #d8d8d8;}
+.s1 { color: #96bf7d;}
+.s2 { color: #cc7832;}
+.s3 { color: #bbb55b;}
+.s4 { color: #cc8b60;}
+</style>
+</head>
+<body bgcolor="#1a1a25">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+angular.json</font>
+</center></td></tr></table>
+<pre><span class="s0">{</span>
+  <span class="s1">&quot;$schema&quot;</span><span class="s2">: </span><span class="s1">&quot;./node_modules/@angular/cli/lib/config/schema.json&quot;</span><span class="s2">,</span>
+  <span class="s1">&quot;version&quot;</span><span class="s2">: </span><span class="s3">1</span><span class="s2">,</span>
+  <span class="s1">&quot;newProjectRoot&quot;</span><span class="s2">: </span><span class="s1">&quot;projects&quot;</span><span class="s2">,</span>
+  <span class="s1">&quot;projects&quot;</span><span class="s2">: </span><span class="s0">{</span>
+    <span class="s1">&quot;Memory-Game&quot;</span><span class="s2">: </span><span class="s0">{</span>
+      <span class="s1">&quot;projectType&quot;</span><span class="s2">: </span><span class="s1">&quot;application&quot;</span><span class="s2">,</span>
+      <span class="s1">&quot;schematics&quot;</span><span class="s2">: </span><span class="s0">{</span>
+        <span class="s1">&quot;@schematics/angular:component&quot;</span><span class="s2">: </span><span class="s0">{</span>
+          <span class="s1">&quot;style&quot;</span><span class="s2">: </span><span class="s1">&quot;sass&quot;</span>
+        <span class="s0">}</span>
+      <span class="s0">}</span><span class="s2">,</span>
+      <span class="s1">&quot;root&quot;</span><span class="s2">: </span><span class="s1">&quot;&quot;</span><span class="s2">,</span>
+      <span class="s1">&quot;sourceRoot&quot;</span><span class="s2">: </span><span class="s1">&quot;src&quot;</span><span class="s2">,</span>
+      <span class="s1">&quot;prefix&quot;</span><span class="s2">: </span><span class="s1">&quot;app&quot;</span><span class="s2">,</span>
+      <span class="s1">&quot;architect&quot;</span><span class="s2">: </span><span class="s0">{</span>
+        <span class="s1">&quot;build&quot;</span><span class="s2">: </span><span class="s0">{</span>
+          <span class="s1">&quot;builder&quot;</span><span class="s2">: </span><span class="s1">&quot;@angular-devkit/build-angular:application&quot;</span><span class="s2">,</span>
+          <span class="s1">&quot;options&quot;</span><span class="s2">: </span><span class="s0">{</span>
+            <span class="s1">&quot;outputPath&quot;</span><span class="s2">: </span><span class="s1">&quot;dist/memory-game&quot;</span><span class="s2">,</span>
+            <span class="s1">&quot;index&quot;</span><span class="s2">: </span><span class="s1">&quot;src/index.html&quot;</span><span class="s2">,</span>
+            <span class="s1">&quot;browser&quot;</span><span class="s2">: </span><span class="s1">&quot;src/main.ts&quot;</span><span class="s2">,</span>
+            <span class="s1">&quot;polyfills&quot;</span><span class="s2">: </span><span class="s0">[</span>
+              <span class="s1">&quot;zone.js&quot;</span>
+            <span class="s0">]</span><span class="s2">,</span>
+            <span class="s1">&quot;tsConfig&quot;</span><span class="s2">: </span><span class="s1">&quot;tsconfig.app.json&quot;</span><span class="s2">,</span>
+            <span class="s1">&quot;inlineStyleLanguage&quot;</span><span class="s2">: </span><span class="s1">&quot;sass&quot;</span><span class="s2">,</span>
+            <span class="s1">&quot;assets&quot;</span><span class="s2">: </span><span class="s0">[</span>
+              <span class="s0">{</span>
+                <span class="s1">&quot;glob&quot;</span><span class="s2">: </span><span class="s1">&quot;**/*&quot;</span><span class="s2">,</span>
+                <span class="s1">&quot;input&quot;</span><span class="s2">: </span><span class="s1">&quot;public&quot;</span>
+              <span class="s0">}</span>
+            <span class="s0">]</span><span class="s2">,</span>
+            <span class="s1">&quot;styles&quot;</span><span class="s2">: </span><span class="s0">[</span>
+              <span class="s1">&quot;@angular/material/prebuilt-themes/rose-red.css&quot;</span><span class="s2">,</span>
+              <span class="s1">&quot;src/styles.sass&quot;</span>
+            <span class="s0">]</span><span class="s2">,</span>
+            <span class="s1">&quot;scripts&quot;</span><span class="s2">: </span><span class="s0">[]</span><span class="s2">,</span>
+            <span class="s1">&quot;server&quot;</span><span class="s2">: </span><span class="s1">&quot;src/main.server.ts&quot;</span><span class="s2">,</span>
+            <span class="s1">&quot;outputMode&quot;</span><span class="s2">: </span><span class="s1">&quot;server&quot;</span><span class="s2">,</span>
+            <span class="s1">&quot;ssr&quot;</span><span class="s2">: </span><span class="s0">{</span>
+              <span class="s1">&quot;entry&quot;</span><span class="s2">: </span><span class="s1">&quot;src/server.ts&quot;</span>
+            <span class="s0">}</span>
+          <span class="s0">}</span><span class="s2">,</span>
+          <span class="s1">&quot;configurations&quot;</span><span class="s2">: </span><span class="s0">{</span>
+            <span class="s1">&quot;production&quot;</span><span class="s2">: </span><span class="s0">{</span>
+              <span class="s1">&quot;budgets&quot;</span><span class="s2">: </span><span class="s0">[</span>
+                <span class="s0">{</span>
+                  <span class="s1">&quot;type&quot;</span><span class="s2">: </span><span class="s1">&quot;initial&quot;</span><span class="s2">,</span>
+                  <span class="s1">&quot;maximumWarning&quot;</span><span class="s2">: </span><span class="s1">&quot;500kB&quot;</span><span class="s2">,</span>
+                  <span class="s1">&quot;maximumError&quot;</span><span class="s2">: </span><span class="s1">&quot;1MB&quot;</span>
+                <span class="s0">}</span><span class="s2">,</span>
+                <span class="s0">{</span>
+                  <span class="s1">&quot;type&quot;</span><span class="s2">: </span><span class="s1">&quot;anyComponentStyle&quot;</span><span class="s2">,</span>
+                  <span class="s1">&quot;maximumWarning&quot;</span><span class="s2">: </span><span class="s1">&quot;4kB&quot;</span><span class="s2">,</span>
+                  <span class="s1">&quot;maximumError&quot;</span><span class="s2">: </span><span class="s1">&quot;8kB&quot;</span>
+                <span class="s0">}</span>
+              <span class="s0">]</span><span class="s2">,</span>
+              <span class="s1">&quot;outputHashing&quot;</span><span class="s2">: </span><span class="s1">&quot;all&quot;</span>
+            <span class="s0">}</span><span class="s2">,</span>
+            <span class="s1">&quot;development&quot;</span><span class="s2">: </span><span class="s0">{</span>
+              <span class="s1">&quot;optimization&quot;</span><span class="s2">: </span><span class="s4">false</span><span class="s2">,</span>
+              <span class="s1">&quot;extractLicenses&quot;</span><span class="s2">: </span><span class="s4">false</span><span class="s2">,</span>
+              <span class="s1">&quot;sourceMap&quot;</span><span class="s2">: </span><span class="s4">true</span>
+            <span class="s0">}</span>
+          <span class="s0">}</span><span class="s2">,</span>
+          <span class="s1">&quot;defaultConfiguration&quot;</span><span class="s2">: </span><span class="s1">&quot;production&quot;</span>
+        <span class="s0">}</span><span class="s2">,</span>
+        <span class="s1">&quot;serve&quot;</span><span class="s2">: </span><span class="s0">{</span>
+          <span class="s1">&quot;builder&quot;</span><span class="s2">: </span><span class="s1">&quot;@angular-devkit/build-angular:dev-server&quot;</span><span class="s2">,</span>
+          <span class="s1">&quot;configurations&quot;</span><span class="s2">: </span><span class="s0">{</span>
+            <span class="s1">&quot;production&quot;</span><span class="s2">: </span><span class="s0">{</span>
+              <span class="s1">&quot;buildTarget&quot;</span><span class="s2">: </span><span class="s1">&quot;Memory-Game:build:production&quot;</span>
+            <span class="s0">}</span><span class="s2">,</span>
+            <span class="s1">&quot;development&quot;</span><span class="s2">: </span><span class="s0">{</span>
+              <span class="s1">&quot;buildTarget&quot;</span><span class="s2">: </span><span class="s1">&quot;Memory-Game:build:development&quot;</span>
+            <span class="s0">}</span>
+          <span class="s0">}</span><span class="s2">,</span>
+          <span class="s1">&quot;defaultConfiguration&quot;</span><span class="s2">: </span><span class="s1">&quot;development&quot;</span>
+        <span class="s0">}</span><span class="s2">,</span>
+        <span class="s1">&quot;extract-i18n&quot;</span><span class="s2">: </span><span class="s0">{</span>
+          <span class="s1">&quot;builder&quot;</span><span class="s2">: </span><span class="s1">&quot;@angular-devkit/build-angular:extract-i18n&quot;</span>
+        <span class="s0">}</span><span class="s2">,</span>
+        <span class="s1">&quot;test&quot;</span><span class="s2">: </span><span class="s0">{</span>
+          <span class="s1">&quot;builder&quot;</span><span class="s2">: </span><span class="s1">&quot;@angular-devkit/build-angular:karma&quot;</span><span class="s2">,</span>
+          <span class="s1">&quot;options&quot;</span><span class="s2">: </span><span class="s0">{</span>
+            <span class="s1">&quot;polyfills&quot;</span><span class="s2">: </span><span class="s0">[</span>
+              <span class="s1">&quot;zone.js&quot;</span><span class="s2">,</span>
+              <span class="s1">&quot;zone.js/testing&quot;</span>
+            <span class="s0">]</span><span class="s2">,</span>
+            <span class="s1">&quot;tsConfig&quot;</span><span class="s2">: </span><span class="s1">&quot;tsconfig.spec.json&quot;</span><span class="s2">,</span>
+            <span class="s1">&quot;inlineStyleLanguage&quot;</span><span class="s2">: </span><span class="s1">&quot;sass&quot;</span><span class="s2">,</span>
+            <span class="s1">&quot;assets&quot;</span><span class="s2">: </span><span class="s0">[</span>
+              <span class="s0">{</span>
+                <span class="s1">&quot;glob&quot;</span><span class="s2">: </span><span class="s1">&quot;**/*&quot;</span><span class="s2">,</span>
+                <span class="s1">&quot;input&quot;</span><span class="s2">: </span><span class="s1">&quot;public&quot;</span>
+              <span class="s0">}</span>
+            <span class="s0">]</span><span class="s2">,</span>
+            <span class="s1">&quot;styles&quot;</span><span class="s2">: </span><span class="s0">[</span>
+              <span class="s1">&quot;@angular/material/prebuilt-themes/rose-red.css&quot;</span><span class="s2">,</span>
+              <span class="s1">&quot;src/styles.sass&quot;</span>
+            <span class="s0">]</span><span class="s2">,</span>
+            <span class="s1">&quot;scripts&quot;</span><span class="s2">: </span><span class="s0">[]</span>
+          <span class="s0">}</span>
+        <span class="s0">}</span>
+      <span class="s0">}</span>
+    <span class="s0">}</span>
+  <span class="s0">}</span><span class="s2">,</span>
+  <span class="s1">&quot;cli&quot;</span><span class="s2">: </span><span class="s0">{</span>
+    <span class="s1">&quot;analytics&quot;</span><span class="s2">: </span><span class="s4">false</span>
+  <span class="s0">}</span>
+<span class="s0">}</span>
+</pre>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<app-header></app-header>
+
+<ng-container *ngIf="!playerNames">
+  <app-player-setup (playersSet)="onPlayersSet($event)"></app-player-setup>
+</ng-container>
+
+<ng-container *ngIf="playerNames" [ngSwitch]="playerNames.red + playerNames.blue">
+  <div class="main-layout">
+    <!-- Sidebar Izquierdo: Nombres -->
+    <app-sidebar
+      [redPlayerName]="playerNames.red"
+      [bluePlayerName]="playerNames.blue">
+    </app-sidebar>
+
+    <!-- Tablero de juego en el centro -->
+    <app-game-board
+  [playerNames]="playerNames!"
+  [playerIds]="playerIds!"
+  (playerChange)="onPlayerChange($event)"
+  (scoreChange)="onScoreChange($event)">
+</app-game-board>
+
+
+    <!--pie de pagina para mostrar los turnos -->
+
+    <app-feet
+      [currentPlayer]="currentPlayer"
+      [redPlayerName]="playerNames.red"
+      [bluePlayerName]="playerNames.blue">
+    </app-feet>
+
+    <!-- Sidebar Derecho: Puntajes -->
+    <app-score-sidebar
+      [scores]="scores">
+
+    </app-score-sidebar>
+
+    <footer class="footer">
+    <p>Autores: Luis Miguel Castro Villegas / Juan Camilo Bustamante Rodas © 2025</p>
+  </footer>
+  </div>
+
+</ng-container>
+
+<router-outlet />

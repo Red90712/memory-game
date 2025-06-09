@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>tsconfig.app.json</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #616fc6;}
+.s1 { color: #d8d8d8;}
+.s2 { color: #96bf7d;}
+.s3 { color: #cc7832;}
+</style>
+</head>
+<body bgcolor="#1a1a25">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+tsconfig.app.json</font>
+</center></td></tr></table>
+<pre><span class="s0">/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */</span>
+<span class="s0">/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */</span>
+<span class="s1">{</span>
+  <span class="s2">&quot;extends&quot;</span><span class="s3">: </span><span class="s2">&quot;./tsconfig.json&quot;</span><span class="s3">,</span>
+  <span class="s2">&quot;compilerOptions&quot;</span><span class="s3">: </span><span class="s1">{</span>
+    <span class="s2">&quot;outDir&quot;</span><span class="s3">: </span><span class="s2">&quot;./out-tsc/app&quot;</span><span class="s3">,</span>
+    <span class="s2">&quot;types&quot;</span><span class="s3">: </span><span class="s1">[</span>
+      <span class="s2">&quot;node&quot;</span>
+    <span class="s1">]</span>
+  <span class="s1">}</span><span class="s3">,</span>
+  <span class="s2">&quot;files&quot;</span><span class="s3">: </span><span class="s1">[</span>
+    <span class="s2">&quot;src/main.ts&quot;</span><span class="s3">,</span>
+    <span class="s2">&quot;src/main.server.ts&quot;</span><span class="s3">,</span>
+    <span class="s2">&quot;src/server.ts&quot;</span>
+  <span class="s1">]</span><span class="s3">,</span>
+  <span class="s2">&quot;include&quot;</span><span class="s3">: </span><span class="s1">[</span>
+    <span class="s2">&quot;src/**/*.d.ts&quot;</span>
+  <span class="s1">]</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>
