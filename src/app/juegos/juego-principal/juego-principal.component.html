@@ -14,11 +14,17 @@
 
     <!-- Tablero de juego en el centro -->
     <app-game-board
-  [playerNames]="playerNames!"
-  [playerIds]="playerIds!"
+  [playerNames]="playerNames"
+  [playerIds]="playerIds"
+  [partidaId]="partidaId"
   (playerChange)="onPlayerChange($event)"
   (scoreChange)="onScoreChange($event)">
 </app-game-board>
+
+
+
+
+
 
 
     <!--pie de pagina para mostrar los turnos -->

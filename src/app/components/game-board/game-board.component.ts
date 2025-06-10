@@ -22,26 +22,23 @@ export class GameBoardComponent {
   flippedCards: number[] = [];
   matchedCards: number[] = [];
   currentPlayer = signal<'red' | 'blue'>('red');
-
   scores = signal<{ red: number; blue: number }>({ red: 0, blue: 0 });
+  inicioTiempo: number = Date.now();
 
-
+  @Input() playerNames!: { red: string; blue: string };
   @Input() playerIds!: { red: number; blue: number };
-@Input() playerNames!: { red: string; blue: string };
+  @Input() partidaId!: number;
 
-
-  // Salidas para el padre
   @Output() playerChange = new EventEmitter<'red' | 'blue'>();
   @Output() scoreChange = new EventEmitter<{ red: number; blue: number }>();
 
-  constructor( private puntajeService: PuntajeService) {
+  constructor(private puntajeService: PuntajeService) {
     this.initializeCards();
 
-    // Emitir cambios automáticamente cuando cambian scores o currentPlayer
-   effect(() => {
-    this.scoreChange.emit(this.scores());
-    this.playerChange.emit(this.currentPlayer());
-  });
+    effect(() => {
+      this.scoreChange.emit(this.scores());
+      this.playerChange.emit(this.currentPlayer());
+    });
   }
 
   initializeCards() {
@@ -94,49 +91,66 @@ export class GameBoardComponent {
   }
 
   showWinner() {
-  const { red, blue } = this.scores(); // ✅ Obtener los puntajes actuales
+    const { red, blue } = this.scores();
+    const tiempoJugado = Math.floor((Date.now() - this.inicioTiempo) / 1000);
 
- this.puntajeService.guardarPuntaje({
-  partida_id: 1,
-  user_id: this.playerIds.red,
-  aciertos: this.scores().red
-}).subscribe({
-  next: () => console.log('✅ Puntaje rojo guardado'),
-  error: err => console.error('❌ Error guardando puntaje rojo', err)
-});
+    const puntajeRojo = {
+      partida_id: this.partidaId,
+      user_id: this.playerIds.red,
+      aciertos: red,
+      tiempo: tiempoJugado,
+    };
 
-this.puntajeService.guardarPuntaje({
-  partida_id: 1,
-  user_id: this.playerIds.blue,
-  aciertos: this.scores().blue
-}).subscribe({
-  next: () => console.log('✅ Puntaje azul guardado'),
-  error: err => console.error('❌ Error guardando puntaje azul', err)
-});
+    const puntajeAzul = {
+      partida_id: this.partidaId,
+      user_id: this.playerIds.blue,
+      aciertos: blue,
+      tiempo: tiempoJugado,
+    };
 
-
-
-  // ✅ Mostrar mensaje con SweetAlert
-  let message = '';
-  if (red > blue) {
-    message = `🏆 ¡Ganó ${this.playerNames.red}!`;
-  } else if (blue > red) {
-    message = `🏆 ¡Ganó ${this.playerNames.blue}!`;
-  } else {
-    message = '🤝 ¡Empate!';
-  }
-
-  Swal.fire({
-    title: message,
-    text: `Puntajes finales — ${this.playerNames.red}: ${red}, ${this.playerNames.blue}: ${blue}`,
-    icon: 'success',
-    confirmButtonText: 'Volver a jugar',
-  }).then(() => {
-    location.reload(); // o una función para reiniciar el juego
+    console.log('🔴 Puntaje Rojo:', {
+    partida_id: this.partidaId,
+    user_id: this.playerIds.red,
+    aciertos: red,
+    tiempo: tiempoJugado
   });
-}
+
+    this.puntajeService.guardarPuntaje(puntajeRojo).subscribe({
+      next: () => console.log('✅ Puntaje rojo guardado'),
+      error: (err) => console.error('❌ Error guardando puntaje rojo', err),
+    });
 
 
+    console.log('🔵 Puntaje Azul:', {
+    partida_id: this.partidaId,
+    user_id: this.playerIds.blue,
+    aciertos: blue,
+    tiempo: tiempoJugado
+  });
+
+    this.puntajeService.guardarPuntaje(puntajeAzul).subscribe({
+      next: () => console.log('✅ Puntaje azul guardado'),
+      error: (err) => console.error('❌ Error guardando puntaje azul', err),
+    });
+
+    let message = '';
+    if (red > blue) {
+      message = `🏆 ¡Ganó ${this.playerNames.red}!`;
+    } else if (blue > red) {
+      message = `🏆 ¡Ganó ${this.playerNames.blue}!`;
+    } else {
+      message = '🤝 ¡Empate!';
+    }
+
+    Swal.fire({
+      title: message,
+      text: `Puntajes finales — ${this.playerNames.red}: ${red}, ${this.playerNames.blue}: ${blue}`,
+      icon: 'success',
+      confirmButtonText: 'Volver a jugar',
+    }).then(() => {
+      location.reload();
+    });
+  }
 
   isFlipped(index: number): boolean {
     return (

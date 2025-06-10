@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { AccesoService } from '../../services/acceso.service';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({

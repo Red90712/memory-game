@@ -27,9 +27,7 @@ constructor() { }
          return this.http.post<ResponseAcceso>(`${this.baseUrl}/users`, objeto);
        }
 
-       lista(userId: number): Observable<MostrarUsuarios> {
-    return this.http.get<MostrarUsuarios>(`${this.baseUrl}/users`);
-  }
+       
 
     
   

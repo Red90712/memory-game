@@ -25,4 +25,9 @@ private baseUrl: string = appsettings.apiUrl;
 
 
 
+LitaPuntajes(): Observable<MostrarPuntaje[]> {
+  return this.http.get<MostrarPuntaje[]>(`${this.baseUrl}/aciertos`);
+}
+
+
 }

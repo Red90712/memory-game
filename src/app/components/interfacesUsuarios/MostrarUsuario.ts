@@ -1,6 +1,6 @@
 export interface MostrarUsuarios{
 id: number,
 name: string,
-email: string
-
+email: string,
+juego_id: string,
 }
